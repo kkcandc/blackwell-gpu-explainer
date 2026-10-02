@@ -44,6 +44,8 @@ npm run preview
 
 ## Deploy
 
-Static Vite build. On Vercel, the framework preset is Vite, the build command is `npm run build`, and the output directory is `dist`. This repo is `kkcandc/blackwell-gpu-explainer`. Deploy it only on Kenny Kline’s personal Vercel account.
+Live: [blackwell-gpu-explainer.vercel.app](https://blackwell-gpu-explainer.vercel.app)
+
+Static Vite build on Kenny Kline’s personal Vercel team (`kenny-klines-projects`), for the repo `kkcandc/blackwell-gpu-explainer`. Framework preset Vite, build command `npm run build`, output directory `dist`. Deployment protection is off, so the tour is public.
 
 No paid APIs. The scene is procedural Three.js.
