@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#08090c" />
+    <meta
+      name="description"
+      content="A silent, guided 3D tour of a Blackwell-class GPU rack: from the cabinet to the silicon."
+    />
+    <title>One rack. One machine. — Blackwell-class GPU</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,520;0,600&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view" aria-label="Interactive 3D model of a Blackwell-class GPU rack"></canvas>
+      <div id="vignette" aria-hidden="true"></div>
+      <header>
+        <div class="brand">
+          <strong>Field guide</strong>
+          <small>Blackwell-class GPU</small>
+        </div>
+        <p id="count">01 / 08</p>
+      </header>
+      <div id="intro" aria-hidden="true">
+        <div>
+          <p class="eyebrow">Blackwell-class GPU</p>
+          <h1>One rack.<br />One machine.</h1>
+        </div>
+      </div>
+      <div id="labels"></div>
+      <section id="card" aria-live="polite">
+        <p id="kicker"></p>
+        <h2 id="title"></h2>
+        <p id="body"></p>
+        <p id="beat" hidden></p>
+        <ul id="facts"></ul>
+        <p id="note">
+          Stylized model from public GB200-class briefs. Not a teardown, and not affiliated with NVIDIA.
+        </p>
+      </section>
+      <p id="hint">Drag to look · scroll to scrub · arrows step</p>
+      <div id="dock">
+        <div class="transport">
+          <button id="prev" type="button" aria-label="Previous chapter">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 3.5 6 8l4.5 4.5" /></svg>
+          </button>
+          <button id="play" type="button" aria-label="Pause tour" aria-pressed="true">
+            <svg id="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5h2v9H5zM9 3.5h2v9H9z" /></svg>
+            <svg id="icon-play" viewBox="0 0 16 16" aria-hidden="true" hidden><path d="M5 3.5v9l7-4.5z" /></svg>
+          </button>
+          <button id="next" type="button" aria-label="Next chapter">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5 10 8l-4.5 4.5" /></svg>
+          </button>
+        </div>
+        <div id="chapters" role="tablist" aria-label="Chapters"></div>
+        <input id="scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Tour position" />
+      </div>
+      <div id="veil"></div>
+      <article id="fallback" hidden>
+        <h1>One rack. One machine.</h1>
+        <p id="fallback-reason"></p>
+        <div id="fallback-body"></div>
+      </article>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
